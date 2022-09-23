@@ -1,165 +1,173 @@
-@import '../../../assets/scss/variables.scss';
+@import "../../../assets/scss/variables.scss";
 
-.pokemon-card {
-  width: 220px;
-  border-radius: 10px;
-  padding: 15px;
+:host {
+  margin: 5vh 10%;
+  height: 100vh;
 
-  background: url('../../../assets/svgs/pokeball.svg');
-  background-repeat: no-repeat;
-  background-position: right -10px bottom -25px;
-  background-clip: initial;
-  background-size: 120px;
-  //background-color: green;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 
+  .pokemon-card {
+    width: 220px;
+    border-radius: 10px;
+    padding: 15px;
 
-  &__header {}
+    background: url("../../../assets/svgs/pokeball.svg");
+    background-repeat: no-repeat;
+    background-position: right -10px bottom -25px;
+    background-clip: initial;
+    background-size: 120px;
 
-  &__id {
-    font-size: 20px;
-    font-weight: bold;
-    color: rgba($color: #1e1e1e, $alpha: 0.2);
-    text-align: end;
-  }
-
-  &__name {
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-  }
-
-  &__body {
-    display: flex;
-  }
-
-  &__types {
-    width: 50%;
-  }
-
-  &__types-item {
-    font-size: 12px;
-    font-weight: bold;
-    color: #fff;
-    text-align: center;
     text-transform: capitalize;
+    font-weight: bold;
 
-    width: fit-content;
-    margin-top: 10px;
-    padding: 5px 15px;
-    border-radius: 15px;
-    background-color: rgba(#fff, 0.2);
-  }
+    &__header {
+    }
 
-  &__image {
-    width: 50%;
+    &__id {
+      font-size: 1.25rem;
+      color: rgba($color: #1e1e1e, $alpha: 0.2);
+      text-align: end;
+    }
 
-    display: flex;
-    justify-content: end;
-    align-items: baseline;
+    &__name {
+      font-size: 1.25rem;
+      color: #fff;
+    }
 
-    img {
-      width: 82px;
-      height: 82px;
+    &__body {
+      display: flex;
+    }
+
+    &__types {
+      width: 50%;
+    }
+
+    &__types-item {
+      font-size: 0.75rem;
+      color: #fff;
+      text-align: center;
+
+      width: fit-content;
+      margin-top: 10px;
+      padding: 5px 15px;
+      border-radius: 15px;
+      background-color: rgba(#fff, 0.2);
+    }
+
+    &__image {
+      width: 50%;
+
+      display: flex;
+      justify-content: end;
+      align-items: baseline;
+
+      img {
+        width: 90px;
+        height: 90px;
+      }
     }
   }
-}
 
-.primary {
-  background-color: $primary
-}
+  .primary {
+    background-color: $primary;
+  }
 
-.red {
-  background-color: $red
-}
+  .red {
+    background-color: $red;
+  }
 
-.blue {
-  background-color: $blue
-}
+  .blue {
+    background-color: $blue;
+  }
 
-.green {
-  background-color: $green
-}
+  .green {
+    background-color: $green;
+  }
 
-.yellow {
-  background-color: $yellow
-}
+  .yellow {
+    background-color: $yellow;
+  }
 
-.purple {
-  background-color: $purple
-}
+  .purple {
+    background-color: $purple;
+  }
 
-.brown {
-  background-color: $brown
-}
+  .brown {
+    background-color: $brown;
+  }
 
-.normal {
-  background-color: $normal
-}
+  .normal {
+    background-color: $normal;
+  }
 
-.fire {
-  background-color: $fire
-}
+  .fire {
+    background-color: $fire;
+  }
 
-.water {
-  background-color: $water
-}
+  .water {
+    background-color: $water;
+  }
 
-.electric {
-  background-color: $electric
-}
+  .electric {
+    background-color: $electric;
+  }
 
-.grass {
-  background-color: $grass
-}
+  .grass {
+    background-color: $grass;
+  }
 
-.ice {
-  background-color: $ice
-}
+  .ice {
+    background-color: $ice;
+  }
 
-.fighting {
-  background-color: $fighting
-}
+  .fighting {
+    background-color: $fighting;
+  }
 
-.poison {
-  background-color: $poison
-}
+  .poison {
+    background-color: $poison;
+  }
 
-.ground {
-  background-color: $ground
-}
+  .ground {
+    background-color: $ground;
+  }
 
-.flying {
-  background-color: $flying
-}
+  .flying {
+    background-color: $flying;
+  }
 
-.psychic {
-  background-color: $psychic
-}
+  .psychic {
+    background-color: $psychic;
+  }
 
-.bug {
-  background-color: $bug
-}
+  .bug {
+    background-color: $bug;
+  }
 
-.rock {
-  background-color: $rock
-}
+  .rock {
+    background-color: $rock;
+  }
 
-.ghost {
-  background-color: $ghost
-}
+  .ghost {
+    background-color: $ghost;
+  }
 
-.dragon {
-  background-color: $dragon
-}
+  .dragon {
+    background-color: $dragon;
+  }
 
-.dark {
-  background-color: $dark
-}
+  .dark {
+    background-color: $dark;
+  }
 
-.steel {
-  background-color: $steel
-}
+  .steel {
+    background-color: $steel;
+  }
 
-.fairy {
-  background-color: $fairy
+  .fairy {
+    background-color: $fairy;
+  }
 }
