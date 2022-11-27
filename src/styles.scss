@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
 
-@import './assets/scss/variables.scss';
+@import "./assets/scss/variables.scss";
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   color: $text-active;
 
   box-sizing: border-box;
@@ -26,103 +26,102 @@ ul {
   cursor: pointer;
 }
 
-
 .primary {
-  background-color: $primary
+  background-color: $primary;
 }
 
 .red {
-  background-color: $red
+  background-color: $red;
 }
 
 .blue {
-  background-color: $blue
+  background-color: $blue;
 }
 
 .green {
-  background-color: $green
+  background-color: $green;
 }
 
 .yellow {
-  background-color: $yellow
+  background-color: $yellow;
 }
 
 .purple {
-  background-color: $purple
+  background-color: $purple;
 }
 
 .brown {
-  background-color: $brown
+  background-color: $brown;
 }
 
 .normal {
-  background-color: $normal
+  background-color: $normal;
 }
 
 .fire {
-  background-color: $fire
+  background-color: $fire;
 }
 
 .water {
-  background-color: $water
+  background-color: $water;
 }
 
 .electric {
-  background-color: $electric
+  background-color: $electric;
 }
 
 .grass {
-  background-color: $grass
+  background-color: $grass;
 }
 
 .ice {
-  background-color: $ice
+  background-color: $ice;
 }
 
 .fighting {
-  background-color: $fighting
+  background-color: $fighting;
 }
 
 .poison {
-  background-color: $poison
+  background-color: $poison;
 }
 
 .ground {
-  background-color: $ground
+  background-color: $ground;
 }
 
 .flying {
-  background-color: $flying
+  background-color: $flying;
 }
 
 .psychic {
-  background-color: $psychic
+  background-color: $psychic;
 }
 
 .bug {
-  background-color: $bug
+  background-color: $bug;
 }
 
 .rock {
-  background-color: $rock
+  background-color: $rock;
 }
 
 .ghost {
-  background-color: $ghost
+  background-color: $ghost;
 }
 
 .dragon {
-  background-color: $dragon
+  background-color: $dragon;
 }
 
 .dark {
-  background-color: $dark
+  background-color: $dark;
 }
 
 .steel {
-  background-color: $steel
+  background-color: $steel;
 }
 
 .fairy {
-  background-color: $fairy
+  background-color: $fairy;
 }
