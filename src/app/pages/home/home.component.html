@@ -1,1 +1,11 @@
-<app-pokemon-card [pokemons]="pokemons"></app-pokemon-card>
+<app-header></app-header>
+
+<div class="home">
+  <div class="home__search-bar">
+    <app-search-bar></app-search-bar>
+  </div>
+
+  <div class="home__content">
+    <app-pokemon-card [pokemons]="pokemons"></app-pokemon-card>
+  </div>
+</div>

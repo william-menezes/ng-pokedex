@@ -1,0 +1,20 @@
+@import '../../../assets/scss/variables.scss';
+
+.search-bar {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background-color: #f4f4f4;
+  color: $text-active;
+
+  display: flex;
+
+  .form-control {
+    width: 100%;
+    background-color: #f4f4f4;
+    outline-style: none;
+    box-shadow: none;
+    border-color: transparent;
+    //color: $text-inactive;
+  }
+}

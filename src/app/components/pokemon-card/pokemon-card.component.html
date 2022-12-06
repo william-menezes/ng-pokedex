@@ -1,4 +1,4 @@
-<div *ngFor="let pokemon of pokemons">
+<ng-template ngFor let-pokemon  [ngForOf]="pokemons">
   <div class="pokemon-card" [ngClass]="pokemon.types[0].type.name">
     <div class="pokemon-card__header">
       <div class="pokemon-card__id">#{{pokemon.id}}</div>
@@ -16,4 +16,4 @@
       </div>
     </div>
   </div>
-</div>
+</ng-template>

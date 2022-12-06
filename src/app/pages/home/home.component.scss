@@ -1,16 +1,27 @@
-* {
-  margin: auto;
+@import "../../../assets/scss/variables.scss";
 
-  @media screen and (max-width: 599px) {
-    width: 340px;
+:host {
+  width: 100vw;
+  height: 100vh;
+
+  .home {
+    margin: auto;
+    height: calc(100vh - 108px);
+
+    @media screen and (max-width: 599px) {
+      width: 340px;
+    }
+
+    @media screen and (min-width: 600px) {
+      width: 460px;
+    }
+
+    @media screen and (min-width: 1000px) {
+      width: 940px;
+    }
+
+    &__search-bar {
+      margin-bottom: 20px;
+    }
   }
-
-  @media screen and (min-width: 600px) {
-    width: 460px;
-  }
-
-  @media screen and (min-width: 1000px) {
-    width: 940px;
-  }
-
 }
