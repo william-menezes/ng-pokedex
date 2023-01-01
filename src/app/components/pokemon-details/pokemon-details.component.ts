@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Pokemon } from 'src/app/models/pokemon';
+
+import { PokemonService } from './../../service/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -6,11 +10,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-details.component.scss'],
 })
 export class PokemonDetailsComponent implements OnInit {
-  constructor() {}
+  pokemon!: Pokemon;
+  liked: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(private route: ActivatedRoute, private router: Router, private pokemonService: PokemonService) {}
 
-  onClick(): void {
-    console.log('clicou');
+  ngOnInit(): void {
+    const name = this.route.snapshot.paramMap.get('name') || '';
+
+    this.pokemonService.getPokemonByName(name).subscribe((pokemon) => {
+      this.pokemon = pokemon;
+
+      console.log(this.pokemon);
+    })
+  }
+
+  comeBack(): void {
+    this.router.navigate(['/']);
+  }
+
+  like(): void {
+    this.liked = !this.liked;
+    console.log("Like");
   }
 }

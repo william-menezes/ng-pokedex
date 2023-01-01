@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { NamedApiResource } from './../../models/named-api-resource';
+
 @Component({
   selector: 'app-pokemon-card',
   templateUrl: './pokemon-card.component.html',
@@ -7,12 +9,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class PokemonCardComponent implements OnInit {
 
-  @Input() pokemons: any;
+  @Input() pokemons: NamedApiResource[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.pokemons)
   }
 
 }

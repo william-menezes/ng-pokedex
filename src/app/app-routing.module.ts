@@ -7,7 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'pokemon/:id', component: DetailsComponent },
+  { path: 'pokemon/:name', component: DetailsComponent },
 ];
 
 @NgModule({
