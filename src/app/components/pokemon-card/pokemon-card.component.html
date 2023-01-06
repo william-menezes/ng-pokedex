@@ -2,7 +2,7 @@
   <ng-container *ngIf="pokemon.status">
     <a class="pokemon-card" [ngClass]="pokemon.status.types[0].type.name" [routerLink]="['/pokemon', pokemon.name]">
       <div class="pokemon-card__header">
-        <div class="pokemon-card__id">#{{ pokemon.status.id }}</div>
+        <div class="pokemon-card__id">#{{ pokemon.status.id | id }}</div>
         <div class="pokemon-card__name">{{ pokemon.name }}</div>
       </div>
 

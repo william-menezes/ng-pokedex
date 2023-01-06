@@ -11,6 +11,10 @@ import { PokemonDetailsComponent } from './components/pokemon-details/pokemon-de
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DescriptionPipe } from './pipes/description.pipe';
+import { IdPipe } from './pipes/id.pipe';
+import { MeasuresConverterPipe } from './pipes/measures-converter.pipe';
+import { CalculatePercentagePipe } from './pipes/calculate-percentage.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,10 @@ import { HomeComponent } from './pages/home/home.component';
     DetailsComponent,
     HeaderComponent,
     SearchBarComponent,
+    DescriptionPipe,
+    IdPipe,
+    MeasuresConverterPipe,
+    CalculatePercentagePipe,
   ],
   imports: [
     BrowserModule,

@@ -1,12 +1,13 @@
+import { PokemonSpecies } from './pokemon-species';
 import { PokemonAbility } from './pokemon-ability';
 export interface Pokemon {
   id: number;
   name: string;
   base_experience: number;
-  height: number;
+  height: any;
   is_default: boolean;
   order: number;
-  weight: number;
+  weight: any;
   abilities: PokemonAbility[];
   forms: any;
   game_indices: any;
@@ -15,7 +16,7 @@ export interface Pokemon {
   moves: any;
   past_types: any;
   sprites: any;
-  species: any;
+  species: PokemonSpecies;
   stats: any;
   types: any;
 }
