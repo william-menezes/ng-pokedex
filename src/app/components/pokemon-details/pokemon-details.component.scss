@@ -192,7 +192,7 @@
     }
 
     &__section {
-      margin-bottom: 15px;
+      margin-bottom: 25px;
     }
 
     &__section-item {
@@ -249,33 +249,35 @@
     &__progress-bar {
       width: 100%;
     }
+
+    progress[value] {
+      color: $blue;
+      background: lightcoral;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      width: 100%;
+      height: 0.25rem;
+
+      border-radius: 6px;
+      background: #EDF2F7;
+    }
+    progress[value]::-webkit-progress-bar {
+      border-radius: 6px;
+      background: #EDF2F7;
+    }
+    progress[value]::-webkit-progress-value {
+      border-radius: 6px;
+      background: $green;
+    }
+    progress[value]::-moz-progress-bar {
+      border-radius: 6px;
+      background: $green;
+    }
   }
 
-  progress[value] {
-    color: $blue;
-    background: lightcoral;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    width: 100%;
-    height: 0.25rem;
 
-    border-radius: 6px;
-    background: #EDF2F7;
-  }
-  progress[value]::-webkit-progress-bar {
-    border-radius: 6px;
-    background: #EDF2F7;
-  }
-  progress[value]::-webkit-progress-value {
-    border-radius: 6px;
-    background: $green;
-  }
-  progress[value]::-moz-progress-bar {
-    border-radius: 6px;
-    background: $green;
-  }
 
   .primary {
     background-color: $primary;
