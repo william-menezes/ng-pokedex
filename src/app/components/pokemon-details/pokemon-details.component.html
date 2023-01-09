@@ -125,7 +125,7 @@
                   />
                 </svg>
 
-                {{pokemonSpecies.gender_rate | calculatePercentage: 'masc'}}%
+                {{ pokemonSpecies.gender_rate | calculatePercentage : "masc" }}%
               </p>
               <p class="pokemon-details__item-value">
                 <svg
@@ -141,7 +141,7 @@
                     d="M8 1a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM3 5a5 5 0 1 1 5.5 4.975V12h2a.5.5 0 0 1 0 1h-2v2.5a.5.5 0 0 1-1 0V13h-2a.5.5 0 0 1 0-1h2V9.975A5 5 0 0 1 3 5z"
                   />
                 </svg>
-                {{pokemonSpecies.gender_rate | calculatePercentage: 'fem'}}%
+                {{ pokemonSpecies.gender_rate | calculatePercentage : "fem" }}%
               </p>
             </div>
             <div class="pokemon-details__section-item">
@@ -196,21 +196,12 @@
       >
       <div class="pokemon-details__info-content">
         <ul *ngFor="let stats of pokemon.stats">
-          <li class="pokemon-details__item">
-            <span class="pokemon-details__item-name">{{
-              stats.stat.name
-            }}</span>
-            <span class="pokemon-details__item-value">{{
-              stats.base_stat
-            }}</span>
-            <div
-              aria-valuemax="100"
-              aria-valuemin="0"
-              aria-valuenow="45"
-              role="progressbar"
-              class="css-1nsw7s9"
-              style="width: 45%"
-            ></div>
+          <li class="pokemon-details__section-item">
+            <p class="pokemon-details__item-label">{{ stats.stat.name }}</p>
+            <p class="pokemon-details__item-value">{{ stats.base_stat }}</p>
+            <div class="pokemon-details__progress-bar">
+              <progress [value]="stats.base_stat" max="100"></progress>
+            </div>
           </li>
         </ul>
       </div>
