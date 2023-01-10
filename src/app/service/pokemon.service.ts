@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
+import { EvolutionChains } from '../models/evolution-chains';
 import { NamedApiResource } from '../models/named-api-resource';
 import { Pokemon } from '../models/pokemon';
 import { PokemonSpecies } from '../models/pokemon-species';
@@ -39,5 +40,15 @@ export class PokemonService {
     return this.http
       .get<PokemonSpecies>(`${this.baseUrl}/pokemon-species/${name}`)
       .pipe(map((res) => res));
+  }
+
+  getEvolutionChain(url: string): Observable<EvolutionChains> {
+    return this.http.get<EvolutionChains>(url).pipe(map((res) => res));
+  }
+
+  getPokemonImage(name: string): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/pokemon/${name}`).pipe(
+      tap((response) => response)
+    );
   }
 }

@@ -1,6 +1,10 @@
 <ng-template ngFor let-pokemon [ngForOf]="pokemons">
   <ng-container *ngIf="pokemon.status">
-    <a class="pokemon-card" [ngClass]="pokemon.status.types[0].type.name" [routerLink]="['/pokemon', pokemon.name]">
+    <a
+      class="pokemon-card"
+      [ngClass]="pokemon.status.types[0].type.name"
+      [routerLink]="['/pokemon', pokemon.name]"
+    >
       <div class="pokemon-card__header">
         <div class="pokemon-card__id">#{{ pokemon.status.id | id }}</div>
         <div class="pokemon-card__name">{{ pokemon.name }}</div>
@@ -14,7 +18,7 @@
         </div>
         <div class="pokemon-card__image">
           <img
-            [src]="pokemon.status.sprites.other.home.front_default"
+            [src]="pokemon.status.sprites.other['official-artwork'].front_default"
             [alt]="pokemon.status.name"
           />
         </div>

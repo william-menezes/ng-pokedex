@@ -1,5 +1,6 @@
-import { PokemonSpecies } from './pokemon-species';
 import { PokemonAbility } from './pokemon-ability';
+import { PokemonSpecies } from './pokemon-species';
+
 export interface Pokemon {
   id: number;
   name: string;

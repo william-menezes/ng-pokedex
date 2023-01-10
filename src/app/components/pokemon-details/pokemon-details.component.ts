@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Pokemon } from 'src/app/models/pokemon';
 
+import { EvolutionChains } from './../../models/evolution-chains';
 import { PokemonSpecies } from './../../models/pokemon-species';
 import { PokemonService } from './../../service/pokemon.service';
 
@@ -13,6 +14,7 @@ import { PokemonService } from './../../service/pokemon.service';
 export class PokemonDetailsComponent implements OnInit {
   pokemon!: Pokemon;
   pokemonSpecies!: PokemonSpecies;
+  evolutionChains!: EvolutionChains;
   liked: boolean = false;
 
   constructor(
@@ -34,7 +36,16 @@ export class PokemonDetailsComponent implements OnInit {
       .subscribe((specie: PokemonSpecies) => {
         this.pokemonSpecies = specie;
         console.log(this.pokemonSpecies);
+
+        this.pokemonService
+          .getEvolutionChain(this.pokemonSpecies.evolution_chain.url)
+          .subscribe((evolutionChain: EvolutionChains) => {
+            this.evolutionChains = evolutionChain;
+            console.log(this.evolutionChains);
+          });
       });
+
+    //this.pokemonService.getPokemonImage(name).subscribe(res => console.log(res));
   }
 
   comeBack(): void {

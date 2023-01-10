@@ -1,4 +1,4 @@
-<ng-container *ngIf="pokemon && pokemonSpecies">
+<ng-container *ngIf="pokemon && pokemonSpecies && evolutionChains">
   <div class="pokemon-details" [ngClass]="pokemon.types[0].type.name">
     <div class="pokemon-details__content">
       <div class="pokemon-details__nav">
@@ -64,8 +64,9 @@
       </div>
 
       <div class="pokemon-details__image">
+        <!--sprites.other.home.front_default-->
         <img
-          [src]="pokemon.sprites.other.home.front_default"
+          [src]="pokemon.sprites.other['official-artwork'].front_default"
           [alt]="pokemon.name"
         />
       </div>
@@ -214,7 +215,42 @@
         id="evolution"
       />
       <label for="evolution" class="pokemon-details__nav-tab">Evolution</label>
-      <div class="pokemon-details__info-content">content 3</div>
+      <div class="pokemon-details__info-content">
+        <div class="pokemon-details__section">
+          <h3 class="pokemon-details__section-title">Breeding</h3>
+          <div class="pokemon-details__section-item">
+            <p class="pokemon-details__item-label">
+              {{ evolutionChains.chain.species.name }}
+            </p>
+            <p class="pokemon-details__item-label">
+              {{
+                evolutionChains.chain.evolves_to[0].evolution_details[0]
+                  .min_level
+              }}
+            </p>
+            <p class="pokemon-details__item-label">
+              {{ evolutionChains.chain.evolves_to[0].species.name }}
+            </p>
+          </div>
+
+          <div class="pokemon-details_section-item">
+            <p class="pokemon-details__item-label">
+              {{ evolutionChains.chain.evolves_to[0].species.name }}
+            </p>
+            <p class="pokemon-details__item-label">
+              {{
+                evolutionChains.chain.evolves_to[0].evolves_to[0]
+                  .evolution_details[0].min_level
+              }}
+            </p>
+            <p class="pokemon-details__item-label">
+              {{
+                evolutionChains.chain.evolves_to[0].evolves_to[0].species.name
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
 
       <!--Moves-->
       <input
