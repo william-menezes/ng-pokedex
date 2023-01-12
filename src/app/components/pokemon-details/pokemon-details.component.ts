@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PokemonSpecies } from 'src/app//models/pokemon-species';
+import { PokemonService } from 'src/app//service/pokemon.service';
+import { EvolutionChains } from 'src/app/models/evolution-chains';
 import { Pokemon } from 'src/app/models/pokemon';
-
-import { EvolutionChains } from './../../models/evolution-chains';
-import { PokemonSpecies } from './../../models/pokemon-species';
-import { PokemonService } from './../../service/pokemon.service';
 
 @Component({
   selector: 'app-pokemon-details',
@@ -15,6 +14,11 @@ export class PokemonDetailsComponent implements OnInit {
   pokemon!: Pokemon;
   pokemonSpecies!: PokemonSpecies;
   evolutionChains!: EvolutionChains;
+
+  firstPokemonImg: string = '';
+  secondPokemonImg: string = '';
+  thirdPokemonImg: string = '';
+
   liked: boolean = false;
 
   constructor(
@@ -42,10 +46,34 @@ export class PokemonDetailsComponent implements OnInit {
           .subscribe((evolutionChain: EvolutionChains) => {
             this.evolutionChains = evolutionChain;
             console.log(this.evolutionChains);
+
+            this.pokemonService
+              .getPokemonImage(this.evolutionChains.chain.species.name)
+              .subscribe((img) => {
+                this.firstPokemonImg = img;
+                console.log(this.firstPokemonImg);
+              });
+
+            this.pokemonService
+              .getPokemonImage(
+                this.evolutionChains.chain.evolves_to[0].species.name
+              )
+              .subscribe((img) => {
+                this.secondPokemonImg = img;
+                console.log(this.secondPokemonImg);
+              });
+
+            this.pokemonService
+              .getPokemonImage(
+                this.evolutionChains.chain.evolves_to[0].evolves_to[0].species
+                  .name
+              )
+              .subscribe((img) => {
+                this.thirdPokemonImg = img;
+                console.log(this.thirdPokemonImg);
+              });
           });
       });
-
-    //this.pokemonService.getPokemonImage(name).subscribe(res => console.log(res));
   }
 
   comeBack(): void {

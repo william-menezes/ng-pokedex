@@ -218,36 +218,86 @@
       <div class="pokemon-details__info-content">
         <div class="pokemon-details__section">
           <h3 class="pokemon-details__section-title">Breeding</h3>
-          <div class="pokemon-details__section-item">
-            <p class="pokemon-details__item-label">
-              {{ evolutionChains.chain.species.name }}
-            </p>
-            <p class="pokemon-details__item-label">
-              {{
-                evolutionChains.chain.evolves_to[0].evolution_details[0]
-                  .min_level
-              }}
-            </p>
-            <p class="pokemon-details__item-label">
-              {{ evolutionChains.chain.evolves_to[0].species.name }}
-            </p>
+          <div class="pokemon-details__evolution-chain">
+
+            <div class="pokemon-details__evolution-wrapper">
+              <div class="pokemon-details__evolution-img">
+                <img
+                  [src]="firstPokemonImg"
+                  alt="evolutionChains.chain.species.name"
+                />
+              </div>
+              <p class="pokemon-details__item-label--evolution">
+                {{ evolutionChains.chain.species.name }}
+              </p>
+            </div>
+
+            <div class="pokemon-details__evolution-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+
+
+              <p class="pokemon-details__item-label--evolution">
+                (Level {{
+                  evolutionChains.chain.evolves_to[0].evolution_details[0]
+                    .min_level
+                }})
+              </p>
+            </div>
+
+            <div class="pokemon-details__evolution-wrapper">
+              <div class="pokemon-details__evolution-img">
+                <img
+                  [src]="secondPokemonImg"
+                  alt="evolutionChains.chain.evolves_to[0].species.name"
+                />
+              </div>
+              <p class="pokemon-details__item-label--evolution">
+                {{ evolutionChains.chain.evolves_to[0].species.name }}
+              </p>
+            </div>
           </div>
 
-          <div class="pokemon-details_section-item">
-            <p class="pokemon-details__item-label">
-              {{ evolutionChains.chain.evolves_to[0].species.name }}
-            </p>
-            <p class="pokemon-details__item-label">
-              {{
-                evolutionChains.chain.evolves_to[0].evolves_to[0]
+          <div class="pokemon-details__evolution-chain">
+
+            <div class="pokemon-details__evolution-wrapper">
+              <div class="pokemon-details__evolution-img">
+                <img
+                  [src]="secondPokemonImg"
+                  alt="evolutionChains.chain.evolves_to[0].species.name"
+                />
+              </div>
+              <p class="pokemon-details__item-label--evolution">
+                {{ evolutionChains.chain.evolves_to[0].species.name }}
+              </p>
+            </div>
+
+            <div class="pokemon-details__evolution-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"/>
+              </svg>
+
+
+              <p class="pokemon-details__item-label--evolution">
+                (Level {{
+                  evolutionChains.chain.evolves_to[0].evolves_to[0]
                   .evolution_details[0].min_level
-              }}
-            </p>
-            <p class="pokemon-details__item-label">
-              {{
-                evolutionChains.chain.evolves_to[0].evolves_to[0].species.name
-              }}
-            </p>
+                }})
+              </p>
+            </div>
+
+            <div class="pokemon-details__evolution-wrapper">
+              <div class="pokemon-details__evolution-img">
+                <img
+                  [src]="thirdPokemonImg"
+                  alt="evolutionChains.chain.evolves_to[0].evolves_to[0].species.name"
+                />
+              </div>
+              <p class="pokemon-details__item-label--evolution">
+                {{ evolutionChains.chain.evolves_to[0].evolves_to[0].species.name }}
+              </p>
+            </div>
           </div>
         </div>
       </div>

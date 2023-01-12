@@ -48,7 +48,11 @@ export class PokemonService {
 
   getPokemonImage(name: string): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/pokemon/${name}`).pipe(
-      tap((response) => response)
+      tap((response) => response),
+      map(
+        (response) =>
+          (response = response.sprites.other['official-artwork'].front_default)
+      )
     );
   }
 }
