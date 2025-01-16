@@ -18,7 +18,7 @@ export class PokemonService {
   constructor(private http: HttpClient) {}
 
   getAllPokemons(): Observable<NamedApiResourceList> {
-    return this.http.get<NamedApiResourceList>(`${this.baseUrl}/pokemon`).pipe(
+    return this.http.get<NamedApiResourceList>(`${this.baseUrl}/pokemon?limit=300&offset=0`).pipe(
       tap((response: NamedApiResourceList) => response),
       tap((response) => {
         response.results.map((data: NamedApiResource) => {
